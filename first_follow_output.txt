@@ -1,13 +1,13 @@
-== FIRST Sets ==
-FIRST(E) = { ( id }
-FIRST(E') = { + ε }
-FIRST(F) = { ( id }
-FIRST(T) = { ( id }
-FIRST(T') = { * ε }
+== Conjuntos FIRST ==
+FIRST(E) = { (, id }
+FIRST(E') = { +, ε }
+FIRST(F) = { (, id }
+FIRST(T) = { (, id }
+FIRST(T') = { *, ε }
 
-== FOLLOW Sets ==
-FOLLOW(E) = { $ ) }
-FOLLOW(E') = { $ ) }
-FOLLOW(F) = { $ ) * + }
-FOLLOW(T) = { $ ) + }
-FOLLOW(T') = { $ ) + }
+== Conjuntos FOLLOW ==
+FOLLOW(E) = { $, ) }
+FOLLOW(E') = { $, ) }
+FOLLOW(F) = { $, ), *, + }
+FOLLOW(T) = { $, ), + }
+FOLLOW(T') = { $, ), + }

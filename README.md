@@ -10,7 +10,7 @@ Este proyecto es una herramienta educativa desarrollada en Python que calcula lo
 Compis-FF/
 │
 ├── gramatica.txt               # Archivo con la definición de la gramática (entrada)
-├── first_follow_calculator.py  # Código fuente principal
+├── FF.py                       # Código fuente principal
 ├── first_follow_output.txt     # Archivo generado con los conjuntos FIRST y FOLLOW
 └── README.md                   # Este documento
 ```
@@ -50,11 +50,8 @@ F -> ( E ) | id
 ### Desde la terminal o consola:
 
 ```bash
-python3 first_follow_calculator.py gramatica.txt
+python3 FF.py
 ```
-
-> Si no se proporciona un nombre de archivo, el programa intentará leer `gramatica.txt` por defecto.
-
 ---
 
 ## ⚙️ Funcionalidades
@@ -71,19 +68,26 @@ python3 first_follow_calculator.py gramatica.txt
 ### En consola:
 
 ```
-== FIRST Sets ==
-FIRST(E)  = { ( id }
-FIRST(E') = { + ε }
-FIRST(F)  = { ( id }
-FIRST(T)  = { ( id }
-FIRST(T') = { * ε }
+Gramática analizada: gramatica.txt
+Símbolo inicial: E
+No terminales: E, E', F, T, T'
+Terminales: (, ), *, +, id
 
-== FOLLOW Sets ==
-FOLLOW(E)  = { $ ) }
-FOLLOW(E') = { $ ) }
-FOLLOW(F)  = { $ ) * + }
-FOLLOW(T)  = { $ ) + }
-FOLLOW(T') = { $ ) + }
+== Conjuntos FIRST ==
+FIRST(E) = { (, id }
+FIRST(E') = { +, ε }
+FIRST(F) = { (, id }
+FIRST(T) = { (, id }
+FIRST(T') = { *, ε }
+
+== Conjuntos FOLLOW ==
+FOLLOW(E) = { $, ) }
+FOLLOW(E') = { $, ) }
+FOLLOW(F) = { $, ), *, + }
+FOLLOW(T) = { $, ), + }
+FOLLOW(T') = { $, ), + }
+
+Resultados exportados a 'first_follow_output.txt'
 ```
 
 ### En el archivo `first_follow_output.txt` se guarda lo mismo.
@@ -139,6 +143,10 @@ Puedes abrirlo con cualquier editor de texto para revisión o entrega.
 ## 👨‍💻 Autor
 
 Desarrollado con fines académicos y educativos.
+
+Andy Fernando 
+Christian Echeverría 
+Davis Roldan
 
 > Si encontraste útil este proyecto o lo estás usando en tu curso de compiladores, ¡dale una estrella si lo subes a GitHub y compártelo con tus compañeros!
 
